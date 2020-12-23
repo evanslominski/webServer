@@ -1,0 +1,180 @@
+/*body*/
+body {font-family:  Arial, Helvetica, sans-serif;
+    width:95%; /*changed from 900 px*/
+    border: 5px solid rgb(0,169,224);
+    box-shadow: -5px -5px 0px rgb(0,65,101), 5px 5px 0px rgb(0,65,101);
+    margin: 10px auto 10px;
+    max-width: 1024px;}
+
+/*header*/
+header{border-bottom:5px solid rgb(0,65,101);
+    padding:0px 2.22% 0px; /*changed from 25 */
+    background-image: linear-gradient(white, rgb(0,65,101));}
+header img{float: left;
+           width: 15%;
+           max-width: 100px;
+           min-width: 85px;}
+header h2 {font-size: 250%;
+    margin-top: 20px;
+    margin-bottom: 10px;}
+header h3 {font-size: 150%;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    color: white;}
+header>h2 {text-indent: 1em;
+    color:rgb(0, 169, 224);
+    font-style: italic;
+    text-shadow: -2px -2px 4px rgb(0,65,101)}
+header>h3 {text-indent: 1.75em;}
+
+/*main*/
+main{padding:0px 2.22% 0px;} /* changed from 25*/
+
+/*section*/
+section {width: 67.22%; /*changed from 605*/
+    float: right;}
+section h1{font-size: 160%;}
+section h2{font-size: 130%;}
+section h3{font-size: 110%;}
+section a:hover, section a:focus{color: darkgray;}
+section h3>a{color: rgb(0,65, 101);}
+
+/*aside*/
+aside {width: 27.22%; /*changed from 245*/
+    float: left;
+    margin-top: 7px;}
+aside a:hover, aside a:focus{color: rgb(0,65, 101);}
+aside ul li>a{color: rgb(0, 169, 224);}
+aside h1{font-size: 160%;}
+aside h2{font-size: 130%;}
+aside h3{font-size: 110%;}
+aside>ul {line-height: 1.5em;}
+
+/*footer*/
+footer {background-color: rgb(0,65,101);
+    font-size: 75%;
+    text-align: center;
+    color: white;
+    padding: .5555%; /* changed from 5*/
+    clear: both;}
+nav {box-shadow: 0 1px 5px black;}
+#nav_menu {
+    margin-bottom: 2em;
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    box-shadow: 0 1px 5px black;
+}
+/* The styles for the operation of the 2-tier navigation menu */
+#nav_menu ul {
+    list-style: none;
+    position: relative;    /* So the first submenu can be positioned within the main menu */
+}
+#nav_menu ul li {
+    float: left;
+    width: 20%;
+}
+#nav_menu ul ul {
+    display: none;         /* Don't display submenu until hover of the li element */
+    position: absolute;
+    top: 100%;             /* Position the submenu at the bottom of the main menu */
+}
+#nav_menu ul ul li {
+    float: none;
+    width: 185px;
+    padding: 0px 10px/* ffDisplay the submenus vertically */
+}
+#nav_menu ul li:hover > ul {
+    display: block;        /* Display the submenu on hover of the li element */
+}
+#nav_menu > ul::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* The styles for the formatting of the 2-tier navigation menu */
+#nav_menu ul {
+    margin: 0;
+    padding: 0;
+}
+#nav_menu ul li a {
+    text-align: center;
+    display: block; /*width changed from 180*/
+    padding: 12px 0 12px 0;
+    text-decoration: none;
+    background-color: rgb(0, 169, 224);;
+    color: white;
+    font-weight: bold;
+    font-size: 110%;
+}
+#nav_menu ul li.lastitem a {
+    width: 175px;           /* So the menu fills the 706px width of the page */
+}
+#nav_menu ul li a.current {
+    color:  rgb(0,65,101);
+}
+#nav_menu ul li a:hover, #nav_menu ul li a:focus {
+    background-color: gray;
+}
+
+/* the styles for the vertical navigation menu */
+#sideMenu ul {
+    list-style: none;
+    margin-left: 0em;
+    margin-bottom: 1.5em;
+    padding: 0px 25px 0px 0%} /*changed from 25*/
+#sideMenu ul li {
+    width: 100%; /*changed from 200*/
+    margin-bottom: .5em;
+    border: 3px solid  rgb(0,65,101);
+}
+#sideMenu ul li a {
+    display: block;
+    font-weight: bold;
+    color:  rgb(0,65,101);
+    text-decoration: none;
+    padding: .5em 0 .5em 1.5em;
+}
+#sideMenu ul li a.current { background-color: silver; }
+#sideMenu ul li a:hover, #sideMenu ul li a:focus {
+    background-color: rgb(0,169,224);
+    color: white;
+}
+/*hide the mobile_menu*/
+#mobile_menu {
+    display: none;
+}
+/* Here come the media stuff*/
+@media only screen and (max-width: 900px) {
+    body {font-size: 90%;
+          box-shadow: none;}
+}
+
+/* mobile landscape to tablet portrait */
+@media only screen and (max-width: 793px) {
+    header h2 {font-size: 225%;}
+    header h3 {font-size: 200%;}
+    #nav_menu {
+        display: none;
+    }
+    #mobile_menu {
+        display: block;
+    }
+}
+
+/* mobile portrait to mobile landscape */
+@media only screen and (max-width: 600px) {
+    header {background-image: linear-gradient(rgb(0, 65, 101), rgb(0, 65, 101));
+            padding: 15px 0 0px 0;}
+    aside {width: 100%;
+           }
+    section {width: 100%;
+             }
+    header img {width: 200px;}
+}
+@media only screen and (max-width: 529px) {
+   header img {width: 80px;}
+    body {font-size: 70%;}
+    header h2 {font-size: 150%;}
+    header h3 {font-size: 140%}
+}
